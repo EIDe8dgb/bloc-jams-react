@@ -13,7 +13,8 @@ class Album extends Component {
        album: album,
        currentSong: album.songs[0],
        isPlaying: false,
-       isHovered: null,
+       hoveredSongIndex: null,
+       hoveredSong: null,
        currentTime: 0,
        duration: album.songs[0].duration,
        currentVolume: 0
@@ -69,6 +70,18 @@ class Album extends Component {
       this.play();
     }
   }
+
+  handleSongHover(song, index) {
+
+    this.setState({hoveredSong: song})
+    this.setState({hoveredSongIndex: index})
+  };
+
+  handleSongUnhover(song) {
+
+    this.setState( {hoveredSongIndex: null} )
+
+  };
 
   handlePrevClick(){
     const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
@@ -133,14 +146,15 @@ class Album extends Component {
             <tr className='song'
             key={index}
             onClick={() => this.handleSongClick(song)}
-            onMouseEnter={ ()=> this.setState({isHovered:index})}
-            onMouseLeave={ ()=> this.setState({isHovered:false})}
+            onMouseEnter={ ()=> this.handleSongHover(song,index)}
+            onMouseLeave={ ()=> this.handleSongUnhover(index)}
             >
                <td>{
-                 (this.state.isHovered === index) ?
-                  <span className={this.state.isPlaying ? "ion-pause" : "ion-play" }></span> :
-                  (index + 1)
-               }
+                 (this.state.isPlaying && (this.state.currentSong === song)) ?
+                  <span className='ion-pause'></span> :
+                  (this.state.hoveredSongIndex === index) ?
+                  <span className='ion-play'></span> : index+1
+                }
                </td>
                <td>{song.title}</td>
                <td>{this.formatTime(song.duration)}</td>
