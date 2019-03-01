@@ -1,0 +1,11 @@
+body{
+  background-color: yellow;
+}
+
+.hero-title{
+  font-size: 5rem;
+}
+
+#supporting-content{
+  margin-top: 10rem;
+}

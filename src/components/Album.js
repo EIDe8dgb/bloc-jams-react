@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
+import '../styling/Album.css';
 
 class Album extends Component {
   constructor(props){
@@ -127,7 +128,7 @@ class Album extends Component {
     return (
       <section className='album'>
       <section id="album-info">
-        <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title}/>/>
+        <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title}/>
          <div className="album-details">
          <h1 id="album-title">{this.state.album.title}</h1>
            <h2 className="artist">{this.state.album.artist}</h2>
@@ -156,7 +157,7 @@ class Album extends Component {
                   <span className='ion-play'></span> : index+1
                 }
                </td>
-               <td>{song.title}</td>
+               <td class='song-title'>{song.title}</td>
                <td>{this.formatTime(song.duration)}</td>
             </tr>
           )

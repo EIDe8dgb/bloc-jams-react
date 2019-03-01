@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+@import url('https://fonts.googleapis.com/css?family=Prata');
+
+img{
+  height: 20rem;
+  width: 20rem;
+  padding-bottom: 3rem;
+}
+
+#artist{
+  font-family: 'Dosis', sans-serif;
+  font-size: 2rem;
+}
+
+#albumTitle{
+  font-family: 'Prata', serif;
+  font-size: 4rem;
+}
+
+#artist, #albumTitle, #numberOfSongs{
+  color: #ff03ff;
+  font-weight: bolder;
+  padding: 1rem;
+}
+
+#numberOfSongs{
+  padding-bottom: 4rem;
+}

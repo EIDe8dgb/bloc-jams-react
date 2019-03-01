@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 .App {
   text-align: center;
 }
@@ -30,4 +33,32 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* body{
+  background-color: yellow;
+} */
+
+.display-4{
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size:  10rem;
+}
+
+.jumbotron{
+  background-color: orange;
+}
+
+.navbar{
+  width: 100%;
+  background-color: orange
+}
+
+.navbar a{
+  color: #4d00ff;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+}
+
+.navbar a:hover{
+  font-size: 2rem;
 }
